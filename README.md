@@ -1,4 +1,4 @@
-memory
+Memory game
 ======
 
-memory
+Small game made in a couple of hours for a friends Easter card.
