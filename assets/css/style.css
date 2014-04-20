@@ -1,0 +1,389 @@
+/*
+                                by
+      ___                        ___           ___           ___
+     /  /\           ___        /  /\         /  /\         /  /\
+    /  /:/          /__/\      /  /::|       /  /::\       /  /::\
+   /  /:/           \__\:\    /  /:|:|      /  /:/\:\     /  /:/\:\
+  /  /::\ ___       /  /::\  /  /:/|:|__   /  /:/  \:\   /  /::\ \:\
+ /__/:/\:\  /\   __/  /:/\/ /__/:/ |:| /\ /__/:/ \__\:| /__/:/\:\ \:\
+ \__\/  \:\/:/  /__/\/:/~~  \__\/  |:|/:/ \  \:\ /  /:/ \  \:\ \:\_\/
+      \__\::/   \  \::/         |  |:/:/   \  \:\  /:/   \  \:\ \:\
+      /  /:/     \  \:\         |__|::/     \  \:\/:/     \  \:\_\/
+     /__/:/       \__\/         /__/:/       \__\::/       \  \:\
+     \__\/                      \__\/            ~~         \__\/
+             ___           ___           ___           ___
+            /  /\         /  /\         /  /\         /  /\
+           /  /::\       /  /::\       /  /::\       /  /::|
+          /  /:/\:\     /__/:/\:\     /  /:/\:\     /  /:|:|
+         /  /::\ \:\   _\_ \:\ \:\   /  /:/  \:\   /  /:/|:|__
+        /__/:/\:\_\:\ /__/\ \:\ \:\ /__/:/ \__\:\ /__/:/ |:| /\
+        \__\/~|::\/:/ \  \:\ \:\_\/ \  \:\ /  /:/ \__\/  |:|/:/
+           |  |:|::/   \  \:\_\:\    \  \:\  /:/      |  |:/:/
+           |  |:|\/     \  \:\/:/     \  \:\/:/       |__|::/
+           |__|:|~       \  \::/       \  \::/        /__/:/
+            \__\|         \__\/         \__\/         \__\/
+
+*/
+
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,address,cite,code,del,dfn,em,img,ins,q,small,strong,sub,sup,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,figure,figure img,figcaption{margin:0;padding:0;border:0;}article,aside,figure,figure img,figcaption,hgroup,footer,header,nav,section,video,object{display:block;}a img{border:0;}
+
+@font-face {
+	font-family:'Brandon Grotesque';
+	src:url('../fonts/brandon-grotesque-bold.woff') format('woff');
+	font-weight:bold;
+	font-style:normal;
+}
+
+* {
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+/* Elementary, my dear Watson */
+html,
+body {
+	background:#fff25b;
+	color:#333;
+}
+body {
+	font:bold 24px/1.18 "Brandon Grotesque", Futura, "Trebuchet MS", Arial, sans-serif;
+	font-style:normal;
+	text-transform:uppercase;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+img,
+object,
+embed {
+	max-width:100%;
+	height:auto;
+}
+button {
+	color:#333;
+	margin:0;
+	padding:0;
+	border:0;
+	background:transparent;
+	cursor:pointer;
+}
+
+/* Ooooh, pretty colors */
+::-moz-selection {
+	background-color:#e9eff5;
+	color:#28303B;
+	text-shadow:none;
+}
+::selection {
+	background-color:#e9eff5;
+	color:#28303B;
+	text-shadow:none;
+}
+
+/* Motherflippin' self-clear */
+.game:after,
+.stack:after {
+	display:block;
+	visibility:hidden;
+	clear:both;
+	height:0;
+	content:".";
+}
+
+/* Structural for when youse gots to be accessible */
+.structural,
+.structural > *,
+.js .js-structural {
+	position:absolute;
+	left:-9999px;
+}
+
+
+/* ============================== */
+/* ! General Layout               */
+/* ============================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin:0 0 20px;
+	-moz-hyphens:auto;
+	-ms-hyphens:auto;
+	-webkit-hyphens:auto;
+	hyphens:auto;
+	-webkit-text-stroke:1px transparent;
+	text-rendering:optimizeLegibility;
+}
+h1 {
+	font-weight:normal;
+	text-align:center;
+	font-size:100px;
+}
+h2 {
+	font-weight:normal;
+}
+p {
+	margin-bottom:32px;
+}
+a,
+a:visited {
+	text-decoration:none;
+}
+a:hover,
+a:focus,
+a:active {
+}
+ul,
+ol {
+	list-style:none;
+}
+
+
+/* ============================== */
+/* ! Content                      */
+/* ============================== */
+.primary-content {
+	margin:75px 0;
+	padding:0 20px;
+}
+.intro,
+.kill-screen {
+	max-width:420px;
+	margin:0 auto;
+}
+.game {
+	max-width:600px;
+	margin:0 auto;
+}
+.primary-content h1 {
+	margin:0 0 60px;
+}
+.primary-content button {
+	display:block;
+	font:bold 24px/1.6 "Brandon Grotesque", Futura, "Trebuchet MS", Arial, sans-serif;
+	margin:0 auto;
+	text-transform:uppercase;
+	background-image:-moz-linear-gradient(top,#878141 50%,#a19946 50%);
+	background-image:-webkit-linear-gradient(top,#878141 50%,#a19946 50%);
+	background-image:-o-linear-gradient(top,#878141 50%,#a19946 50%);
+	background-image:linear-gradient(to bottom,#878141 50%,#a19946 50%);
+	background-repeat:repeat-x;
+	background-size:2px 2px;
+	background-position:0 31px;
+}
+.footer small {
+	display:block;
+	margin:40px 0;
+	text-align:center;
+	text-transform:none;
+	font-weight:normal;
+	font-size:12px;
+	font-family:"Helvetica Neue", Arial, sans-serif;
+}
+
+/* Views */
+.game,
+.kill-screen {
+	display:none;
+}
+.start-game .game,
+.end-game .kill-screen {
+	display:block;
+}
+.end-game .intro,
+.end-game .game,
+.start-game .intro {
+	display:none;
+}
+
+
+/* ============================== */
+/* ! Game	                      */
+/* ============================== */
+
+/* Notifications */
+.success body:after,
+.fail body:after {
+	position:fixed;
+	top:0;
+	left:0;
+	content:"";
+	width:100%;
+	height:100%;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+.fail body:after {
+	background-image:url(../img/fail.png);
+	-moz-animation:shake 150ms 2 linear;
+	-webkit-animation:shake 150ms 2 linear;
+	animation:shake 150ms 2 linear;
+}
+.success body:after {
+	background-image:url(../img/success.png);
+}
+
+/* Stack o' cards */
+.stack {
+	list-style:none;
+}
+.card {
+	position:relative;
+	cursor:pointer;
+	float:left;
+	width:70px;
+	height:70px;
+	margin:0 28px 28px 0;
+	-webkit-perspective:1000;
+	-moz-perspective:1000;
+	-o-perspective:1000;
+	perspective:1000;
+}
+.card.active {
+	cursor:default;
+}
+.card.completed {
+	opacity:0;
+	cursor:default;
+}
+.card .inner {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	-webkit-transition:-webkit-transform 0.5s;
+	-moz-transition:-moz-transform 0.5s;
+	-o-transition:-o-transform 0.5s;
+	transition:transform 0.5s;
+	-webkit-transform-style:preserve-3d;
+	-moz-transform-style:preserve-3d;
+	-o-transform-style:preserve-3d;
+	transform-style:preserve-3d;
+}
+.card .front,
+.card .back {
+	display:block;
+	height:100%;
+	width:100%;
+	position:absolute;
+	margin:0px;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+}
+.card .front {
+	background-color:#000;
+}
+.card .back {
+	background-color:#ccc;
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+	-o-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+.card.active .inner {
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+	-o-transform:rotateY(180deg);
+	transform:rotateY(180deg);
+}
+
+/* Pane colors */
+.color-1 .front { background-color:#ff838b; }
+.color-2 .front { background-color:#5ec152; }
+.color-3 .front { background-color:#c2e770; }
+.color-4 .front { background-color:#5f6971; }
+.color-5 .front { background-color:#ff8a48; }
+.color-6 .front { background-color:#9f60b5; }
+.color-7 .front { background-color:#60b0e6; }
+.color-8 .front { background-color:#b07d5b; }
+
+/* Pane co-workers */
+
+
+/* No-JavaScript fallback */
+#noscript-warning {
+	display:block;
+	position:fixed;
+	top:30%;
+	left:50%;
+	z-index:101;
+	width:510px;
+	margin-left:-255px;
+	padding:22px 32px;
+	border-radius:4px;
+	-moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.35);
+	box-shadow:0 1px 4px rgba(0, 0, 0, 0.35);
+	background:#1c252e;
+}
+#noscript-warning:target {
+	display:none;
+}
+#noscript-warning a {
+	color:#9e9e9e;
+}
+#noscript-warning h4 {
+	color:#bbb;
+	font-size:26px;
+	line-height:32px;
+}
+#noscript-warning p {
+	margin-bottom:10px;
+	padding-right:15px;
+	color:#b3b3b3;
+	font-size:14px;
+	line-height:21px;
+}
+#noscript-warning p + p {
+	margin-top:0;
+}
+
+
+/* IE Fallback */
+/*
+No.
+*/
+
+/* ============================== */
+/* ! Animations/Transitions       */
+/* ============================== */
+@-moz-keyframes shake {
+	0% { -moz-transform: translate(5px, 0); }
+	50% { -moz-transform: translate(-5px, 0); }
+	100% { -moz-transform: translate(0, 0); }
+}
+@-webkit-keyframes shake {
+	0% { -webkit-transform: translate(5px, 0); }
+	50% { -webkit-transform: translate(-5px, 0); }
+	100% { -webkit-transform: translate(0, 0); }
+}
+@keyframes shake {
+	0% { transform: translate(5px, 0); }
+	50% { transform: translate(-5px, 0); }
+	100% { transform: translate(0, 0); }
+}
+
+
+/* ============================== */
+/* ! General Media Queries   	  */
+/* ============================== */
+
+/* Mobile */
+@media only screen and (max-width:560px) {
+	body,
+	.primary-content button {
+		font-size:20px;
+	}
+	h1 {
+		font-size:60px;
+	}
+	.card {
+		width:60px;
+		height:60px;
+	}
+}
